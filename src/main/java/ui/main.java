@@ -51,8 +51,14 @@ public class main extends javax.swing.JFrame {
         TRRadioButton = new javax.swing.JRadioButton();
         BLRadioButton = new javax.swing.JRadioButton();
         BRRadioButton = new javax.swing.JRadioButton();
+        Authors = new javax.swing.JLabel();
+        helpPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         imagePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -124,7 +130,7 @@ public class main extends javax.swing.JFrame {
                 .addGroup(imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TLIconImagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TRIconImagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
                 .addGroup(imagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BRIconImagePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BLIconImagePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -138,6 +144,7 @@ public class main extends javax.swing.JFrame {
         redCheckBox.setForeground(new java.awt.Color(255, 0, 0));
         redCheckBox.setSelected(true);
         redCheckBox.setText("Rojo");
+        redCheckBox.setToolTipText("Activar/Desactivar el canal rojo");
         redCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 redCheckBoxActionPerformed(evt);
@@ -147,6 +154,7 @@ public class main extends javax.swing.JFrame {
         greenCheckBox.setForeground(new java.awt.Color(0, 255, 51));
         greenCheckBox.setSelected(true);
         greenCheckBox.setText("Verde");
+        greenCheckBox.setToolTipText("Activar/Desactivar el canal verde");
         greenCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 greenCheckBoxActionPerformed(evt);
@@ -156,6 +164,7 @@ public class main extends javax.swing.JFrame {
         blueCheckBox.setForeground(new java.awt.Color(0, 0, 204));
         blueCheckBox.setSelected(true);
         blueCheckBox.setText("Azul");
+        blueCheckBox.setToolTipText("Activar/Desactivar el canal azul");
         blueCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 blueCheckBoxActionPerformed(evt);
@@ -164,6 +173,7 @@ public class main extends javax.swing.JFrame {
 
         allCheckBox.setSelected(true);
         allCheckBox.setText("Todos");
+        allCheckBox.setToolTipText("Activar/Desactivar todos los canales");
         allCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allCheckBoxActionPerformed(evt);
@@ -264,6 +274,44 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Authors.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        Authors.setText("Desarrollo por Noah Hernández Morales e Isidro Bermúdez Fernández");
+
+        helpPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Ayuda"));
+
+        jLabel2.setText("El panel de \"Colores\" permite acticar y desactivar los canales de colores de la imagen inferior.");
+
+        jLabel3.setText("Siempre tiene que haber un canal activo.");
+
+        jLabel4.setText("El panel de \"Posición del icono\" permite cambiar la ubicación del icono a cualquiera de las cuatro esquinas.");
+
+        javax.swing.GroupLayout helpPanelLayout = new javax.swing.GroupLayout(helpPanel);
+        helpPanel.setLayout(helpPanelLayout);
+        helpPanelLayout.setHorizontalGroup(
+            helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helpPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(helpPanelLayout.createSequentialGroup()
+                        .addGroup(helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        helpPanelLayout.setVerticalGroup(
+            helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helpPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout optionPanelLayout = new javax.swing.GroupLayout(optionPanel);
         optionPanel.setLayout(optionPanelLayout);
         optionPanelLayout.setHorizontalGroup(
@@ -271,7 +319,11 @@ public class main extends javax.swing.JFrame {
             .addGroup(optionPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(colorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 467, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(optionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Authors, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(helpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iconPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -280,6 +332,10 @@ public class main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(optionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(optionPanelLayout.createSequentialGroup()
+                        .addComponent(helpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Authors))
                     .addComponent(iconPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(colorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -452,6 +508,7 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Authors;
     private ui.ImagePanel BLIconImagePanel;
     private javax.swing.JRadioButton BLRadioButton;
     private ui.ImagePanel BRIconImagePanel;
@@ -464,9 +521,13 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JCheckBox blueCheckBox;
     private javax.swing.JPanel colorPanel;
     private javax.swing.JCheckBox greenCheckBox;
+    private javax.swing.JPanel helpPanel;
     private javax.swing.ButtonGroup iconButtonGroup;
     private javax.swing.JPanel iconPanel;
     private ui.ImagePanel imagePanel;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel optionPanel;
     private javax.swing.JCheckBox redCheckBox;
     // End of variables declaration//GEN-END:variables
